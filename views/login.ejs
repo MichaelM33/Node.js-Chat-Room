@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<% if (messages.error){ %>
-	<%= messages.error %>
-<% } %>
 	<head>
 		<link rel="stylesheet" href="style.css" />
 		<title>Chat App</title>
@@ -35,6 +32,9 @@
 					<button type="submit" class="btn">Login</button>
 				</form>
 				<a class="btn" href="register">Register</a>
+				<% if (messages.error){ %>
+					<%= messages.error %>
+				<% } %>
 			</main>
 		</div>
 	</body>
@@ -62,7 +62,7 @@ body {
 	font-size: 16px;
 	margin: 20px;
 	background-color: var(--body-color);
-    color: blue;
+    color: red;
 }
 .login-container {
 	max-width: 500px;
