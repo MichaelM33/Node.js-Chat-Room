@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chat App</title>
+	</head>
+	<body>
+		<div class="join-container">
+			<header class="join-header">
+				<h1>Chat App</h1>
+			</header>
+			<main class="join-main">
+				<form action="/chat" method="GET">
+					<div class="form-control">
+						<h1>Welcome <%= username %></h1>
+						<label for="username">Display Name</label>
+						<input
+							type="text"
+							name="username"
+							id="username"
+							required
+							readonly
+							value = <%= username %>
+							
+						/>
+					</div>
+					<div class="form-control">
+						<label for="room">Channel</label>
+						<select name="room" id="room">
+							<option value="General">General</option>
+							<option value="Music">Music</option>
+						</select>
+					</div>
+					<button type="submit" class="btn">Join Channel</button>
+				</form>
+				<form action="/logout?_method=DELETE" method="POST">
+					<button type="submit">Log Out</button>
+				</form>
+			</main>
+		</div>
+	</body>
+
+	<style>
+
+:root {
+
+	--light-color: rgb(216,218,220);
+	--body-color: rgb(32,34,37);
+	--main-color: rgb(41,43,47);
+	--textfield-color: rgb(54,57,63);
+	--sidebar-color: rgb(47,49,54);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	margin: 20px;
+	background-color: var(--body-color);
+}
+
+
+.join-container {
+	max-width: 501px;
+	margin: 81px auto;
+	color: #fff;
+}
+
+.join-header {
+	text-align: center;
+	padding: 21px;
+	background: var(--main-color);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.join-main {
+	padding: 31px 41px;
+	background: rgb(47,49,54);
+}
+
+.join-main p {
+	margin-bottom: 21px;
+}
+
+.join-main .form-control {
+	margin-bottom: 21px;
+}
+
+.join-main label {
+	display: block;
+	margin-bottom: 4px;
+	margin-top: 6px;
+}
+
+.join-main input[type='text'] {
+	font-size: 17px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main input[type='password'] {
+	font-size: 17px;
+	padding: 6px;
+	height: 41px;
+	width: 100%;
+}
+
+.join-main select {
+	font-size: 17px;
+	padding: 6px;
+	height: 40px;
+	width: 100%;
+}
+.btn {
+	margin-top: 21px;
+	width: 100%;
+	cursor: pointer;
+	padding: 6px 16px;
+	background: var(--light-color);
+	color: var(--main-color);
+	border: 0;
+	font-size: 18px;
+}
+</style>
+</html>

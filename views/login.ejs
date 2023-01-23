@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<% if (messages.error){ %>
+	<%= messages.error %>
+<% } %>
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<title>Chat App</title>
+	</head>
+	<body>
+		<div class="login-container">
+			<header class="login-header">
+				<h1>Login</h1>
+			</header>
+			<main class="login-main">
+				<form action="/login" method="POST">
+					<div class="form-control">
+						<label for="username">Username</label>
+						<input
+							type="text"
+							name="username"
+							id="username"
+							placeholder="Enter username..."
+							required
+						/>
+						<label for="password">Password</label>
+						<input
+							type="password"
+							name="password"
+							id="password"
+							placeholder="Enter password..."
+							required
+						/>
+					</div>
+					<button type="submit" class="btn">Login</button>
+				</form>
+				<a class="btn" href="register">Register</a>
+			</main>
+		</div>
+	</body>
+
+
+<style>
+
+:root {
+
+	--dark-color-b: rgb(47,49,54);
+	--light-color: rgb(216,218,220);
+	--body-color: rgb(32,34,37);
+	--main-color: rgb(41,43,47);
+
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	margin: 20px;
+	background-color: var(--body-color);
+    color: blue;
+}
+.login-container {
+	max-width: 500px;
+	margin: 80px auto;
+	color: #fff;
+}
+.login-header {
+	text-align: center;
+	padding: 20px;
+	background: var(--main-color);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.login-main {
+	padding: 30px 40px;
+	background: var(--dark-color-b);
+}
+.login-main p {
+	margin-bottom: 20px;
+}
+
+.login-main .form-control {
+	margin-bottom: 20px;
+}
+.login-main label {
+	display: block;
+	margin-bottom: 5px;
+}
+.login-main input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+	margin-bottom: 20px;
+
+}
+.login-main input[type='password'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.login-main .btn {
+	margin-top: 20px;
+	width: 100%;
+}
+.btn {
+	cursor: pointer;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--main-color);
+	border: 0;
+	font-size: 17px;
+}
+a {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	margin-top: 20px;
+}
+
+</style>
+</html>
